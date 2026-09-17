@@ -2,6 +2,18 @@
 
 AlgoLens is a React and Vite algorithm visualizer with an Express metadata API. It provides interactive visualizations for sorting, pathfinding, data structures, graph algorithms, and math/recursion topics.
 
+**Live demo:** [algorithm-visualizer-io-rb6c-delta.vercel.app](https://algorithm-visualizer-io-rb6c-delta.vercel.app/)
+
+## Features
+
+- Step-through algorithm visualizations with play, pause, reset, and speed controls.
+- Sorting visualizations with bar-chart rendering.
+- Pathfinding visualizations on an interactive grid.
+- Data structure views for linked lists, trees, and tables.
+- Graph algorithm visualizations on a canvas.
+- Math and recursion visualizations.
+- Complexity references and algorithm metadata served by the backend API.
+
 ## Project Layout
 
 - `frontend/`: React application, visual engines, renderers, and page routes.
@@ -133,6 +145,15 @@ For the backend host:
 2. Start it with `npm start`.
 3. Set `CORS_ORIGIN` to the frontend origin.
 4. Use `/api/health` as the health check endpoint.
+
+### Vercel
+
+This repository contains two applications. Deploy them as separate Vercel projects:
+
+- Frontend project: set **Root Directory** to `frontend`.
+- Backend project: set **Root Directory** to `backend` and use `npm start` as the start command.
+
+For the frontend project, set `VITE_API_BASE_URL` to the deployed backend URL ending in `/api` before building. For the backend project, set `CORS_ORIGIN` to the deployed frontend URL.
 
 Do not commit `.env` files. The committed `.env.example` files contain only non-secret defaults.
 
